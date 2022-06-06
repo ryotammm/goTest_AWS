@@ -1,0 +1,280 @@
+{{ define "content" }}
+
+<div id="content">
+  <div class="hero">
+    <div class="login_space">
+      <div class="profile">
+        <div profile_top>
+          {{ .succ.Succ1 }}
+          <img class="profile__img" src="/static/images/profile_icon.png" />
+          <div class="profile__name">
+            <p class="p_p">名前:</p>
+            {{ .profile.Name }}
+          </div>
+          <div class="profile__name">
+            <p class="p_p">アドレス:</p>
+            {{ .profile.Email }}
+          </div>
+        </div>
+
+        <div class="profile__desc">
+
+          <form action="/profile/edit/name">
+            <button class="cta">
+              <span class="hover-underline-animation"> 名前を変更する </span>
+              <svg
+                id="arrow-horizontal"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="10"
+                viewBox="0 0 46 16"
+              >
+                <path
+                  id="Path_10"
+                  data-name="Path 10"
+                  d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                  transform="translate(30)"
+                ></path>
+              </svg>
+            </button>
+          </form>
+          <form action="/profile/edit/email">
+            <button class="cta">
+              <span class="hover-underline-animation"> Emailを変更する </span>
+              <svg
+                id="arrow-horizontal"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="10"
+                viewBox="0 0 46 16"
+              >
+                <path
+                  id="Path_10"
+                  data-name="Path 10"
+                  d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                  transform="translate(30)"
+                ></path>
+              </svg>
+            </button>
+          </form>
+          <form action="/profile/edit/password">
+            <button class="cta">
+              <span class="hover-underline-animation">
+                パスワードを変更する
+              </span>
+              <svg
+                id="arrow-horizontal"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="10"
+                viewBox="0 0 46 16"
+              >
+                <path
+                  id="Path_10"
+                  data-name="Path 10"
+                  d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                  transform="translate(30)"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <h2 class="h2_post">投稿一覧</h2>
+      {{ range .pracs }}
+
+      <article class="practice_article_my">
+        <!-- <a href="/detail"> -->
+
+        <form method="GET" name="a_form" action="/detail" class="test">
+          <div>
+            <figure class="practice_photo">
+              <img src="https://practiceimage.s3.ap-northeast-1.amazonaws.com/images/{{ .UUID }}.png" alt="" />
+            </figure>
+            <div class="practice_content">
+              <h2 class="practice_content_prefectures">{{ .Prefecture }}</h2>
+              <p class="practice_content_place">場所:　{{ .Place }}</p>
+              <p class="practice_content_time">
+                時間:　{{ .Strat_time }}〜{{ .End_time }}
+              </p>
+              <p class="practice_content_scale">規模:　{{ .Scale }}人程度</p>
+            </div>
+          </div>
+          <input name="id" type="hidden" value="{{ .ID }}" />
+        </form>
+
+        <form
+          method="post"
+          name="b_form"
+          action="/recruitment/delete"
+          class="test3"
+        >
+          <div class="del_div">
+            <a class="del-btn btn btn--gray btn--radius">削除</a>
+            <input name="uuid" type="hidden" value="{{ .UUID }}" />
+          </div>
+        </form>
+      </article>
+
+      {{end}}
+    </div>
+  </div>
+</div>
+
+<style>
+  .practice_content_prefectures {
+    margin-top: 20px;
+  }
+
+  .profile {
+    background: #fff;
+    width: 300px;
+    padding: 2rem;
+    border-bottom: 2px solid #1a1a1a;
+    /* border-top: 2px solid #1a1a1a; */
+    margin: 0 auto;
+  }
+
+  .profile__img {
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .profile_top {
+    margin: 0 auto;
+  }
+
+  .profile__img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .profile__name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem auto 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .profile__desc {
+    line-height: 1.6rem;
+    margin: 0 auto;
+    text-align: center;
+    /* text-align: left; */
+  }
+
+  .profile_p {
+    /* white-space: nowrap; */
+    /* margin-right: auto; */
+  }
+
+  .change_p {
+    margin-bottom: 10px;
+  }
+
+  .p_p {
+    margin-bottom: 5px;
+  }
+
+  .practice_article_my {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 30px;
+  }
+
+  .h2_post {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .btn--gray {
+    background-color: #d3d3d3;
+  }
+
+  .del_div {
+    width: 100%;
+    text-align: right;
+  }
+  .del-btn {
+    color: gray;
+    margin-right: 20px;
+  }
+  /* From uiverse.io by @alexmaracinaru */
+  .cta {
+    border: none;
+    background: none;
+    margin-bottom: 10px;
+  }
+
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    /* font-size: 10px; */
+    font-size: 1.1rem;
+    padding-right: 15px;
+    color: gray;
+    text-transform: uppercase;
+  }
+
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+
+  .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+  }
+
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    cursor: pointer;
+  }
+
+  button.cta:hover {
+    cursor: pointer;
+  }
+
+  .practice_article_my:hover {
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .side-item:hover {
+    /* opacity: .7; */
+    border-bottom: 2px solid #535353;
+  }
+</style>
+
+{{end}}

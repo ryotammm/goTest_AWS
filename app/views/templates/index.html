@@ -1,0 +1,166 @@
+{{ define "content" }}
+
+<script type="text/javascript">
+  function cancelsubmit() {
+    if(document.getElementById("search_text").value === "" && document.getElementById("search_pref").value === "") {
+      return false;
+    }
+  }
+</script>   
+    <div id="content">
+      <div class="hero">
+        <div id="search-container">
+          <div class="search">
+            <h1 style="color:red; text-align: center; margin-top:20px; font-size:1.2rem;">※サンプルサイトのため、練習記事はダミーデータです。</h1>
+            <form method="get" action="/search" onsubmit="return cancelsubmit()">
+              <div  class="search_container">
+              <input type="text" size="160" placeholder="検索" name="tags" id="search_text">
+              
+              <input type="submit" value="&#xf002" class="search_submit" id="search_btn">　
+            </div>
+            <div class="search_container2">
+              <select name="prefectures"  class="search-input"  id="search_pref">
+                  <option value="" selected>都道府県</option>
+                  <option value="北海道">北海道</option>
+                  <option value="青森県">青森県</option>
+                  <option value="岩手県">岩手県</option>
+                  <option value="宮城県">宮城県</option>
+                  <option value="秋田県">秋田県</option>
+                  <option value="山形県">山形県</option>
+                  <option value="福島県">福島県</option>
+                  <option value="茨城県">茨城県</option>
+                  <option value="栃木県">栃木県</option>
+                  <option value="群馬県">群馬県</option>
+                  <option value="埼玉県">埼玉県</option>
+                  <option value="千葉県">千葉県</option>
+                  <option value="東京都">東京都</option>
+                  <option value="神奈川県">神奈川県</option>
+                  <option value="新潟県">新潟県</option>
+                  <option value="富山県">富山県</option>
+                  <option value="石川県">石川県</option>
+                  <option value="福井県">福井県</option>
+                  <option value="山梨県">山梨県</option>
+                  <option value="長野県">長野県</option>
+                  <option value="岐阜県">岐阜県</option>
+                  <option value="静岡県">静岡県</option>
+                  <option value="愛知県">愛知県</option>
+                  <option value="三重県">三重県</option>
+                  <option value="滋賀県">滋賀県</option>
+                  <option value="京都府">京都府</option>
+                  <option value="大阪府">大阪府</option>
+                  <option value="兵庫県">兵庫県</option>
+                  <option value="奈良県">奈良県</option>
+                  <option value="和歌山県">和歌山県</option>
+                  <option value="鳥取県">鳥取県</option>
+                  <option value="島根県">島根県</option>
+                  <option value="岡山県">岡山県</option>
+                  <option value="広島県">広島県</option>
+                  <option value="山口県">山口県</option>
+                  <option value="徳島県">徳島県</option>
+                  <option value="香川県">香川県</option>
+                  <option value="愛媛県">愛媛県</option>
+                  <option value="高知県">高知県</option>
+                  <option value="福岡県">福岡県</option>
+                  <option value="佐賀県">佐賀県</option>
+                  <option value="長崎県">長崎県</option>
+                  <option value="熊本県">熊本県</option>
+                  <option value="大分県">大分県</option>
+                  <option value="宮崎県">宮崎県</option>
+                  <option value="鹿児島県">鹿児島県</option>
+                  <option value="沖縄県">沖縄県</option>
+                </select>
+
+        </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+ 
+      <div id="main-content">
+     <h2 class="result_h2">{{ .result }}</h2> 
+        <main class="main_article">
+
+  
+          {{ range .pracs }}
+        
+          <article class="practice_article">
+                <form method="GET" name="a_form" action="/detail" class="test">
+                  <div>
+                 
+            <figure class="practice_photo">
+              <img  class="xxx" src="https://practiceimage.s3.ap-northeast-1.amazonaws.com/images/{{ .UUID }}.png" alt="" > 
+            </figure>
+            <div class="practice_content">
+              <h2 class="practice_content_prefectures">{{ .Prefecture }}</h2>
+              <p class="practice_content_place">場所:　{{ .Place }}</p>
+              <p class="practice_content_time">時間:　{{ .Strat_time }}〜{{ .End_time }}</p>
+              <p class="practice_content_scale">規模:　{{ .Scale }}人程度</p>
+              </div>
+      
+                  </div>   
+                  <input name="id" type="hidden" value="{{ .ID }}">
+          </form>
+          
+          </article>
+          {{end}}
+        </main>
+      </div>
+    </div>
+<style>
+
+
+img.xxx{
+  border-bottom: solid 1px #B4AEAE;
+
+}
+ .test-btn {
+	background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  cursor: pointer;
+
+
+}
+
+.test-btn{
+  display: block;
+  height:100%;
+  width:100%;
+
+}
+ .side-item:hover{
+
+  border-bottom: 2px solid #535353;
+} 
+
+.practice_content_place{
+  margin-bottom:10px;
+}
+
+.practice_content_time{
+  margin-bottom:10px;
+}
+.practice_content_scale{
+ 
+  margin-bottom:10px;
+}
+
+.practice_content_prefectures{
+  margin-top:20px;
+}
+h2.result_h2{
+  text-align: center;
+ 
+}
+
+.practice_article:hover{
+box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.4);
+}
+</style>
+
+{{end}}
+

@@ -1,0 +1,60 @@
+{{ define "content" }}
+<div id="content">
+  <div class="hero"></div>
+</div>
+
+{{ range .pracs }}
+
+<article class="practice_article_detail">
+  <div>
+    <figure class="practice_photo ggg">
+      <img  class="min"  src="https://practiceimage.s3.ap-northeast-1.amazonaws.com/images/{{ .UUID }}.png" alt="" > 
+      
+    </figure>
+    <div class="practice_content">
+      <h2 class="practice_content_prefectures">{{ .Prefecture }}</h2>
+      <p class="practice_content_place">場所:　{{ .Place }}</p>
+      <p class="practice_content_time">
+        時間:　{{ .Strat_time }}〜{{ .End_time }}
+      </p>
+      <p class="practice_content_scale">規模:　{{ .Scale }}人程度</p>
+      <h2 class="practice_content_prefectures">説明</h2>
+      <p class="practice_content_describe">　{{ .Describe }}</p>
+    </div>
+    <div class="dd"></div>
+  </div>
+  <input name="id" type="hidden" value="{{ .ID }}" />
+</article>
+{{ end }}
+
+<style>
+
+
+  .practice_content_describe {
+    overflow-wrap: break-word;
+    width: 100%;
+  }
+
+  .practice_article_detail {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 600px) {
+    .practice_article_detail {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (min-width: 835px) {
+    .practice_article_detail {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  .practice_content_prefectures {
+    margin-top: 15px;
+  }
+</style>
+
+{{end}}

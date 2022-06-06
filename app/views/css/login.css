@@ -1,0 +1,61 @@
+h1,
+h2,
+p {
+  font-family: heisei-maru-gothic-std, sans-serif;
+  color: #483e3e;
+}
+body {
+  font-family: heisei-maru-gothic-std, sans-serif;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100%;
+}
+
+h2 {
+  font-size: 17px;
+  color: #6c4b4b;
+  margin-bottom: 10px;
+}
+
+.contact_form {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  margin-bottom: 30px;
+}
+
+.contact_form h2 {
+  grid-column: 2;
+  margin-bottom: 15px;
+}
+
+form {
+  grid-column: 2;
+}
+
+.contact_form .p_label {
+  grid-column: 2;
+  height: 25px;
+  margin-bottom: 8px;
+}
+
+.contact_form span {
+  display: inline-block;
+  width: 20%;
+}
+
+.p_submit {
+  grid-column: 2;
+}
+
+.contact_form .modoru {
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 10px;
+  grid-column: 2;
+  margin: 0 0 0 auto;
+}

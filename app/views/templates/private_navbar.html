@@ -1,0 +1,28 @@
+{{ define "navbar" }}
+
+<nav class="header__nav">
+  <ul class="header__ul">
+    <li class="header__li item">
+      <a href="/profile"
+        ><span class="wel">ようこそ</span
+        ><span class="wel_name">{{ .profile.Name }} {{ .name }}</span>さん</a
+      >
+    </li>
+    <li class="header__li item"><a href="/profile">プロフィール</a></li>
+    <li class="header__li item"><a href="/recruitment">練習募集</a></li>
+    <li class="header__li item"><a href="/logout">ログアウト</a></li>
+  </ul>
+</nav>
+
+<style>
+  .wel {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 3px;
+  }
+  .wel_name {
+    padding-right: 7px;
+    border-bottom: solid 1px black;
+  }
+</style>
+{{end}}

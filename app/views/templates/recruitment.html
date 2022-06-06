@@ -1,0 +1,358 @@
+{{ define "content" }}
+
+
+      <div id="content">
+        <div class="hero">
+ 
+      <div class="login_space">
+        <form action="/recruitment" method="post" class="test9"　 enctype="multipart/form-data" >
+    
+          <fieldset>
+            <legend class="leg_pd"><h2 class="login_h2 h2_top">練習募集</h2></legend>
+
+            <div class="search_container2">
+              <select name="prefecture"  class="search-input" id="prefecture">
+                        <option value="" selected>都道府県</option>
+                        <option value="北海道">北海道</option>
+                        <option value="青森県">青森県</option>
+                        <option value="岩手県">岩手県</option>
+                        <option value="宮城県">宮城県</option>
+                        <option value="秋田県">秋田県</option>
+                        <option value="山形県">山形県</option>
+                        <option value="福島県">福島県</option>
+                        <option value="茨城県">茨城県</option>
+                        <option value="栃木県">栃木県</option>
+                        <option value="群馬県">群馬県</option>
+                        <option value="埼玉県">埼玉県</option>
+                        <option value="千葉県">千葉県</option>
+                        <option value="東京都">東京都</option>
+                        <option value="神奈川県">神奈川県</option>
+                        <option value="新潟県">新潟県</option>
+                        <option value="富山県">富山県</option>
+                        <option value="石川県">石川県</option>
+                        <option value="福井県">福井県</option>
+                        <option value="山梨県">山梨県</option>
+                        <option value="長野県">長野県</option>
+                        <option value="岐阜県">岐阜県</option>
+                        <option value="静岡県">静岡県</option>
+                        <option value="愛知県">愛知県</option>
+                        <option value="三重県">三重県</option>
+                        <option value="滋賀県">滋賀県</option>
+                        <option value="京都府">京都府</option>
+                        <option value="大阪府">大阪府</option>
+                        <option value="兵庫県">兵庫県</option>
+                        <option value="奈良県">奈良県</option>
+                        <option value="和歌山県">和歌山県</option>
+                        <option value="鳥取県">鳥取県</option>
+                        <option value="島根県">島根県</option>
+                        <option value="岡山県">岡山県</option>
+                        <option value="広島県">広島県</option>
+                        <option value="山口県">山口県</option>
+                        <option value="徳島県">徳島県</option>
+                        <option value="香川県">香川県</option>
+                        <option value="愛媛県">愛媛県</option>
+                        <option value="高知県">高知県</option>
+                        <option value="福岡県">福岡県</option>
+                        <option value="佐賀県">佐賀県</option>
+                        <option value="長崎県">長崎県</option>
+                        <option value="熊本県">熊本県</option>
+                        <option value="大分県">大分県</option>
+                        <option value="宮崎県">宮崎県</option>
+                        <option value="鹿児島県">鹿児島県</option>
+                        <option value="沖縄県">沖縄県</option>
+                      </select>
+        </div>
+
+              <div class="cp_iptxt">
+                              
+                <input class="ef" type="text" placeholder="" name="place" id="place">
+                <label class="lab">場所</label>
+                <span class="focus_line"></span>
+              </div>
+
+              <!-- <div class="cp_iptxt">
+                <input class="ef" type="time" placeholder="" name="start-time" class="time" style="text-align:center" id="start-time"　 value="00:00"> 
+                <label class="lab">開始時刻</label>
+                <span class="focus_line"></span>
+              </div> -->
+
+              <!-- <div class="cp_iptxt">
+                <input class="ef" type="time" placeholder="" name="end-time" class="time" style="text-align:center" id="end-time"  >
+                <label class="lab">終了時間</label>
+                <span class="focus_line"></span>
+              </div> -->
+
+              <h2 class="login_h2"><h2>開始時間</h2>
+              <div class="search_container2">
+                <select name="start-time" class="search-input time_p" id="start-time">
+                  <option value="" selected>選択してください</option>
+                  <option value="00:00">00:00</option>
+                  <option value="00:30">00:30</option>
+                  <option value="01:00">01:00</option>
+                  <option value="01:30">01:30</option>
+                  <option value="02:00">02:00</option>
+                  <option value="02:30">02:30</option>
+                  <option value="03:00">03:00</option>
+                  <option value="03:30">03:30</option>
+                  <option value="04:00">04:00</option>
+                  <option value="04:30">04:30</option>
+                  <option value="05:00">05:00</option>
+                  <option value="05:30">05:30</option>
+                  <option value="06:00">06:00</option>
+                  <option value="06:30">06:30</option>
+                  <option value="07:00">07:00</option>
+                  <option value="07:30">07:30</option>
+                  <option value="08:00">08:00</option>
+                  <option value="08:30">08:30</option>
+                  <option value="09:00">09:00</option>
+                  <option value="09:30">09:30</option>
+                  <option value="10:00">10:00</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:00">11:00</option>
+                  <option value="11:30">11:30</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:00">14:00</option>
+                  <option value="14:30">14:30</option>
+                  <option value="15:00">15:00</option>
+                  <option value="15:30">15:30</option>
+                  <option value="16:00">16:00</option>
+                  <option value="16:30">16:30</option>
+                  <option value="17:00">17:00</option>
+                  <option value="17:30">17:30</option>
+                  <option value="18:00">18:00</option>
+                  <option value="18:30">18:30</option>
+                  <option value="19:00">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                  <option value="21:30">21:30</option>
+                  <option value="22:00">22:00</option>
+                  <option value="22:30">22:30</option>
+                  <option value="23:00">23:00</option>
+                  <option value="23:30">23:30</option>
+                        </select>
+          </div>
+  
+
+
+
+          <h2 class="login_h2"><h2>終了時間</h2>
+          <div class="search_container2">
+            <select name="end-time"  class="search-input time_p" id="end-time">
+              <option value="" selected>選択してください</option>
+              <option value="00:00">00:00</option>
+              <option value="00:30">00:30</option>
+              <option value="01:00">01:00</option>
+              <option value="01:30">01:30</option>
+              <option value="02:00">02:00</option>
+              <option value="02:30">02:30</option>
+              <option value="03:00">03:00</option>
+              <option value="03:30">03:30</option>
+              <option value="04:00">04:00</option>
+              <option value="04:30">04:30</option>
+              <option value="05:00">05:00</option>
+              <option value="05:30">05:30</option>
+              <option value="06:00">06:00</option>
+              <option value="06:30">06:30</option>
+              <option value="07:00">07:00</option>
+              <option value="07:30">07:30</option>
+              <option value="08:00">08:00</option>
+              <option value="08:30">08:30</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="12:30">12:30</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+              <option value="22:30">22:30</option>
+              <option value="23:00">23:00</option>
+              <option value="23:30">23:30</option>
+            </select>
+      </div>
+
+
+
+
+              <div class="cp_iptxt">
+                <input class="ef" type="number"  name="scale" class="number"  id="scale">
+                <label class="lab">規模</label>
+                <span class="focus_line"></span>
+              </div>
+              <div class="cp_iptxt">
+                <textarea class="ef" type="text"  name="describe"  row="" cols="30" id="describe"></textarea>
+                <label class="lab">説明</label>
+                <span class="focus_line"></span>
+              </div>
+
+              <div class="cp_iptxt">
+                <input class="ef" type="text"  name="tags"　size="40" id="tags">
+                <label class="lab">ダグ</label>
+                <span class="focus_line"></span>
+              </div>
+              
+              <h2 class="login_h2"><h2>トップ画像</h2>
+              <input type="file" name="file"　 accept="image/png, image/jpeg ,image/jpg">
+           <p class="image_p">※選択しない場合、デフォルトの画像が選択されます。</p>
+
+            </fieldset>
+              <a  class="btn btn--orange btn--radius btn-pad">投稿</a>    
+      </form>
+</div>
+
+</div>
+</div>
+  <style>
+
+
+    .leg_pd{
+      padding-top: 20px;
+    }
+
+    .time_p{
+      font-size: 1.1rem;
+      color:gray;
+    }
+
+    .search-input:hover{
+      cursor: pointer;
+    }
+
+.time{
+  text-align: center !important;
+}
+
+
+    .image_p{
+      margin-top: 10px;
+    }
+    .test-btn {
+       background: none;
+       border: none;
+       outline: none;
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+     cursor: pointer;
+   
+   
+   }
+   
+   .test-btn{
+     display: block;
+     height:100%;
+     width:100%;
+   }
+   
+
+    .side-item:hover{
+     /* opacity: .7; */
+     border-bottom: 2px solid #535353;
+   } 
+
+
+
+
+fieldset{
+    width:100%;
+     margin: 0 auto;
+text-align: center;
+
+}
+
+.login_space{
+  width:100%;
+text-align: center;
+max-width: 500px;
+z-index: 100;
+margin:  0 auto;
+
+}
+
+
+   </style>
+
+<script>
+
+
+  window.addEventListener('DOMContentLoaded', ()=>{
+    const test9 = document.querySelector('.test9 a');
+   let count = 0;
+    test9.addEventListener('click',e=>{
+      
+  
+      var prefecture = document.querySelector('#prefecture');
+      var place = document.querySelector('#place');
+      var start_time = document.querySelector('#start-time');
+
+      var end_time = document.querySelector('#end-time');
+      var scale = document.querySelector('#scale');
+      var describe = document.querySelector('#describe');
+      var tags = document.querySelector('#tags');
+    
+      if (prefecture.value === ""){
+           alert("都道府県を入力してください");
+           e.preventDefault();
+     return false;
+      }else if (place.value === ""){
+        alert("場所を入力してください");
+           e.preventDefault();
+      return false;
+    }else if (start_time.value === ""){
+        alert("開始時刻を入力してください");
+           e.preventDefault();
+      return false;
+    }else if (end_time.value === ""){
+        alert("終了時刻を入力してください");
+           e.preventDefault();
+      return false;
+    }else if (scale.value === ""){
+        alert("規模を数値で入力してください");
+           e.preventDefault();
+      return false;
+    }else if (describe.value === ""){
+        alert("説明を入力してください");
+           e.preventDefault();
+      return false;
+    }else if (tags.value === ""){
+        alert("タグを入力してください");
+           e.preventDefault();
+      return false;
+    }else{
+
+      count++;
+
+      if (count === 1) {
+        e.target.closest('form').submit();
+      } 
+      }
+    }) ;
+  
+  });
+  </script>
+{{end}}
+

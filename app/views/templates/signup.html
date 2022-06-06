@@ -1,0 +1,126 @@
+{{ define "content" }}
+    
+
+      <div id="content">
+        <div class="hero">
+  
+        </div>
+      </div>
+      <div class="login_space">
+
+        <form action="/signup" method="post" class="test8">
+    
+          <fieldset>
+            <legend><h2 class="login_h2"><h2>登録</h2></legend>
+
+            <p class="p_red">{{ .error.Err3 }} </p>
+              <div class="cp_iptxt">
+             
+             
+                <input class="ef" type="text" placeholder="" name="name" id="name">
+                <label class="lab">お名前</label>
+                <span class="focus_line"></span>
+              </div>
+              <div class="cp_iptxt">
+                <input class="ef"  type="email" placeholder="" name="email"  id="email">
+                <label class="lab">Email</label>
+                <span class="focus_line"></span>
+              </div>
+              <div class="cp_iptxtPd">
+                <input class="ef" type="password"  name="password"　size="40" id="password">
+                <label class="lab">Password</label>
+                <span class="focus_line"></span>
+
+              </div>
+         
+              <div class="dd"> <p class="ddd"> <br>※パスワードは半角英数字の
+                <br>大文字１文字以上と数字を含めてください。<br>また、8文字以上15文字以下で入力してください。
+                <br> 半角英数字で入力してください。</p></div>
+
+            </fieldset>
+              <a class="btn btn--orange btn--radius">登録</a>
+           
+              <div class="dd"></div>
+      </form>
+  </div>
+<style>
+  .dd{
+    overflow-wrap: break-all;
+    margin-bottom: 20px;
+  }
+
+    .test-btn {
+       background: none;
+       border: none;
+       outline: none;
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+      cursor: pointer;
+   
+   }
+   
+   .test-btn{
+     display: block;
+     height:100%;
+     width:100%;
+   }
+      
+    .side-item:hover{
+     /* opacity: .7; */
+     border-bottom: 2px solid #535353;
+   } 
+   
+
+   fieldset{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.login_space{
+  width:100%;
+text-align: center;
+max-width: 500px;
+z-index: 100;
+margin:  0 auto;
+
+}
+
+.p_red{
+  color:red;
+}
+ 
+ </style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelector('.test8 a').addEventListener('click',e=>{
+      
+  
+      var name = document.querySelector('#name');
+      var email = document.querySelector('#email');
+      var password = document.querySelector('#password');
+    
+      if (name.value === ""){
+           alert("お名前を入力してください");
+           e.preventDefault();
+     return false;
+      }else if (email.value === ""){
+        alert("Emailを入力してください");
+           e.preventDefault();
+      return false;
+    }else if (password.value === ""){
+        alert("Passwordを入力してください");
+           e.preventDefault();
+      return false;
+    }else{
+      
+      e.target.closest('form').submit();
+      }
+    }) ;
+  
+  });
+  </script>
+{{end}}

@@ -1,0 +1,41 @@
+{{ define "navbarmobile" }}
+<nav class="mobile-menu">
+
+  <ul class="mobile-menu__main">
+    <li class="mobile-menu__item">
+      <div class="side-item">  
+            <a class="mobile-menu__link"  href="/profile">
+            <span class="main-title"><span class="wel">ようこそ</span><span class="wel_name2">{{ .profile.Name }} {{ .name }}</span>さん</span>
+          </a>
+
+      </div>
+    </li>
+    <li class="mobile-menu__item">
+      <div class="side-item">
+            <a class="mobile-menu__link"  href="/recruitment">
+            <span class="main-title">練習募集</span>
+          </a>
+
+      </div>
+    </li>
+
+    <li class="mobile-menu__item">
+      <div class="side-item">
+      
+            <a class="mobile-menu__link" href="/profile" >
+            <span class="main-title">プロフィール</span>
+          </a>
+      </div>
+    </li>
+    <li class="mobile-menu__item">
+<div class="side-item">
+    <a class="mobile-menu__link" href="/logout">
+    <span class="main-title">ログアウト</span>
+  </a>
+
+</form>
+</div>
+    </li>
+  </ul>
+</nav>
+{{end}}

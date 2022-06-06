@@ -1,0 +1,337 @@
+iPhoneおよび共通設定 .test {
+  display: flex;
+  width: 100%;
+}
+.test img {
+  width: 26px;
+  height: 26px;
+}
+
+header {
+}
+.header_nav {
+}
+
+nav ul {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav ul li {
+  flex-grow: 1;
+}
+
+.header_button {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+nav ul button:hover {
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: heisei-maru-gothic-std, a-otf-midashi-mi-ma31-pr6n, sans-serif;
+}
+
+p {
+  font-size: 14px;
+  font-weight: w4;
+  line-height: 18px;
+  color: #483e3e;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100%;
+}
+
+.header {
+  /*display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;*/
+}
+
+.header h1 {
+  margin-left: 2.66%;
+  font-size: 20px;
+  font-weight: w8;
+  color: #81a238;
+  padding-top: 19px;
+}
+/*
+.header ul {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-between;
+  margin-right: 3px;
+}
+
+.header ul li {
+  margin-top: 20px;
+}
+
+.header ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header ul a:hover {
+  color: red;
+}
+
+
+h2 {
+  font-size: 17px;
+  color: #6C4B4B;
+  margin-bottom: 10px;
+} */
+
+.contact_form {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  margin-bottom: 30px;
+}
+
+.contact_form h2 {
+  grid-column: 2;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+form {
+  grid-column: 2;
+}
+
+.contact_form .p_label {
+  grid-column: 2;
+  height: 25px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.contact_form span {
+  display: inline-block;
+  width: 20%;
+}
+
+.input_search {
+  display: inline-block;
+  width: 100%;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.practice_article a {
+  text-decoration: none;
+}
+
+.practice_article:hover {
+  opacity: 0.8;
+}
+
+.p_submit {
+  grid-column: 2;
+  margin: 0 0 0 auto;
+}
+
+.contact_form .modoru {
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 10px;
+  grid-column: 2;
+  margin: 0 0 0 auto;
+}
+
+.Page_top {
+  margin: 0 auto;
+}
+
+.main_article {
+  display: grid;
+  margin: 0 30px 0 30px;
+}
+
+.practice_article {
+  margin-bottom: 30px;
+  border: 1px solid #b4aeae;
+  border-radius: 20px;
+}
+
+.practice_photo {
+  width: 100%;
+}
+.practice_photo img {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.practice_content {
+  text-align: center;
+}
+
+.footer {
+  background-color: #fff;
+}
+
+.footer .footer_title {
+  height: 25px;
+  color: #fff;
+  background-color: #b4aeae;
+  padding-left: 8%;
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
+.footer .footer_textbox {
+  margin-left: 8%;
+}
+
+.footer .footer_textbox p {
+  line-height: 1.7em;
+}
+
+/*iPadの設定*/
+@media screen and (min-width: 600px) {
+  p {
+    font-size: 16px;
+    line-height: 23px;
+    color: #666;
+  }
+
+  /* .header {
+  margin-bottom: 3%;
+}
+
+.header h1 {
+  margin-left: 2.39%;
+  font-size: 30px;
+  padding-top: 15px;
+}
+
+.header ul {
+  width: 21.58%;
+  margin-right: 2.51%;
+}
+
+.header ul li {
+  margin-top: 30px;
+} */
+
+  .contact_form {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  .main_article {
+    display: grid;
+    margin: 0 30px 0 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+  }
+
+  .footer {
+    padding-bottom: 50px;
+  }
+
+  .footer .footer_title {
+    padding-left: 4.79%;
+  }
+
+  .footer .footer_textbox {
+    padding-left: 0;
+    margin-left: 4.79%;
+    display: flex;
+    width: 65.94%;
+    justify-content: space-between;
+  }
+
+  .footer .footer_text {
+    width: 27.57%;
+  }
+}
+
+/*PCサイズの設定*/
+@media screen and (min-width: 835px) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .main_article {
+    display: grid;
+    margin: 0 30px 0 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 30px;
+  }
+}
+
+/*search */
+
+.search_container {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 940px;
+}
+.search_container input[type="text"] {
+  border: none;
+  height: 2em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879d9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline: none;
+}
+
+.search_container2 {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 480px;
+}
+.search-input {
+  border: none;
+  height: 2em;
+  width: 100%;
+  text-align: center;
+}
+.search-input {
+  outline: 0;
+}

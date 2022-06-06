@@ -1,0 +1,374 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+   
+    <title>TableTennis</title>
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+
+    <!-- 追記 -->
+    <meta name="description" content="This site is a test site." />
+    <link
+      rel="icon"
+      href="/static/images/f_f_event_23_svg_f_event_23_0bg.svg"
+    />
+    <!-- <link rel="stylesheet" href="styles/loader.css"> -->
+    <script src="/static/js/scripts/vendors/pace.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/css/styles/vendors/bootstrap-reboot.css"
+    />
+    <link rel="stylesheet" href="/static/css/styles/vendors/swiper.min.css" />
+    <link rel="stylesheet" href="/static/css/styles/style.css" />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <a href="/" class="top_logo_link">
+                <span class="top_log_f">卓球練習検索サイト</span>
+              </a>
+            </div>
+            {{template "navbar" . }}
+
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        {{template "content" . }}
+
+        <footer class="footer appear up">
+          <div class="logo item"></div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item">Service</li>
+              <li class="footer__li item">Contact</li>
+              <li class="footer__li item">Company</li>
+              <li class="footer__li item">Sitemap</li>
+              <li class="footer__li item cory_right">&copy; TableTennis</li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
+      {{template "navbarmobile" . }}
+    </div>
+
+    <style>
+      .footer__copyright {
+        display: block;
+      }
+    </style>
+
+    <!-- 追記 -->
+    <script src="/static/js/scripts/vendors/swiper.min.js"></script>
+    <script src="/static/js/scripts/vendors/TweenMax.min.js"></script>
+    <script src="/static/js/scripts/vendors/scroll-polyfill.js"></script>
+    <script src="/static/js/scripts/libs/scroll.js"></script>
+    <script src="/static/js/scripts/libs/text-animation.js"></script>
+    <script src="/static/js/scripts/libs/hero-slider.js"></script>
+    <script src="/static/js/scripts/libs/mobile-menu.js"></script>
+    <script src="/static/js/scripts/main.js"></script>
+
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <script>
+
+
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".test div").forEach(function (test) {
+          test.addEventListener("click", (e) => {
+            e.target.closest("form").submit();
+          });
+        });
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".test3 a").forEach(function (test) {
+          test.addEventListener("click", (e) => {
+            var result = window.confirm("削除しても宜しいですか？");
+
+            if (result) {
+              //「true」の処理
+              e.target.closest("form").submit();
+            } else {
+              //「false」の処理
+            }
+          });
+        });
+      });
+
+
+
+      // window.addEventListener("DOMContentLoaded", () => {
+      //   document.querySelector(".test2 a").addEventListener("click", (e) => {
+      //     e.target.closest("form").submit();
+      //   });
+      // });
+    </script>
+
+    <style>
+      .cp_iptxt {
+        position: relative;
+        width: 80%;
+        margin: 40px 3%;
+      }
+      /**********************/
+      .cp_iptxtPd {
+        position: relative;
+        width: 80%;
+        margin: 20px 3%;
+        margin-top: 40px;
+      }
+
+      .cp_iptxtPd input[type="password"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+
+      .cp_iptxtPd input[type="password"]:focus {
+        outline: none;
+      }
+
+      /****************************************/
+
+      .cp_iptxt input[type="text"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+      .cp_iptxt input[type="time"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+      .cp_iptxt input[type="number"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+
+      .cp_iptxt textarea[type="text"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+      }
+
+      .cp_iptxt input[type="email"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+
+      .cp_iptxt input[type="password"] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 4em;
+        text-align: center;
+      }
+
+      .cp_iptxt input[type="password"]:focus {
+        outline: none;
+      }
+
+      .cp_iptxt input[type="text"]:focus {
+        outline: none;
+      }
+      .cp_iptxt input[type="email"]:focus {
+        outline: none;
+      }
+
+      .cp_iptxt input[type="password"]:focus {
+        outline: none;
+      }
+      .cp_iptxt input[type="time"]:focus {
+        outline: none;
+      }
+      .cp_iptxt input[type="number"]:focus {
+        outline: none;
+      }
+
+      .ef {
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid #1b2538;
+        background-color: transparent;
+      }
+      .ef ~ .focus_line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: 0.4s;
+        background-color: #da3c41;
+      }
+      .ef:focus ~ .focus_line,
+      .cp_iptxt.ef ~ .focus_line {
+        width: 100%;
+        transition: 0.4s;
+      }
+      .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #aaaaaa;
+      }
+      .ef:focus ~ label,
+      .cp_iptxt.ef ~ label {
+        font-size: 12px;
+        top: -16px;
+        transition: 0.3s;
+        color: #da3c41;
+      }
+
+      .btn--orange,
+      a.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+      }
+      .btn--orange:hover,
+      a.btn--orange:hover {
+        color: #fff;
+        background: #f56500;
+      }
+
+      a.btn--radius {
+        border-radius: 100vh;
+      }
+
+
+      .login_space {
+        text-align: center;
+        max-width: 500px;
+        z-index: 100;
+        margin: 0 auto;
+      }
+
+      fieldset {
+        width: 100%;
+      }
+
+      .lab {
+        text-align: left;
+      }
+
+      .login_h2_image {
+        margin-right: 30px;
+        margin-bottom: 20px;
+      }
+
+      .top_logo_link {
+        text-decoration: none;
+        color: black;
+
+        background-image: url("/static/images/ten.png");
+      }
+
+      .top_logo_link:hover {
+        /* border: solid 2px black; */
+        color: #696969;
+        border-bottom: 1px solid #696969;
+      }
+
+      .header {
+        background-color: #d3d3d3;
+      }
+      .footer {
+        background-color: #d3d3d3;
+        width: 100%;
+      }
+
+      .top_img {
+      }
+
+      .top_log_f {
+      }
+
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      #global-container {
+        height: 100%;
+        /* white-space: nowrap; */
+      }
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .footer {
+        /* height:150px; */
+        margin-top: auto;
+        padding-top: 0px;
+      }
+      .menu-open {
+        overflow: hidden;
+      }
+
+      .footer__ul {
+        display: block;
+        background-color: #d3d3d3;
+      }
+
+      .p_red {
+        color: red;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
+{{end}}

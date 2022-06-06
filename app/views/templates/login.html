@@ -1,0 +1,191 @@
+{{ define "content" }}
+
+<div id="content">
+  <div class="hero"></div>
+</div>
+
+<div class="login_space">
+  <form action="/authenticate" method="post" class="test7">
+    <fieldset>
+      <legend><h2 class="login_h2">ログイン</h2></legend>
+      <p class="p_red">{{ .error.Err5 }}</p>
+      <p class="p_red">{{ .error.Err6 }}</p>
+      <div class="cp_iptxt">
+        <input class="ef" type="text" placeholder="" name="email" id="email" />
+        <label class="lab">Email</label>
+        <span class="focus_line"></span>
+      </div>
+
+      <div class="cp_iptxt">
+        <input
+          class="ef"
+          type="password"
+          placeholder=""
+          name="password"
+          id="password"
+        />
+        <label class="lab">Password</label>
+        <span class="focus_line"></span>
+      </div>
+    </fieldset>
+    <a  class="btn btn--orange btn--radius">ログイン</a>
+    <div class="dd"></div>
+  </form>
+  <div class="testUser"> 
+    <p class="testUser_p">※テストUser1 </p>
+    <p class="testUser_p">Email: test@example.com</p>
+    <p class="testUser_p">Pass: Testtest11</p>
+    </div>
+    <div class="testUser"> 
+      <p class="testUser_p">※テストUser2 </p>
+      <p class="testUser_p">Email: test2@example.com</p>
+      <p class="testUser_p">Pass: Testtest22</p>
+      </div>
+</div>
+
+<style>
+    .testUser{
+    margin-bottom:20px;
+    
+
+  }
+    .testUser_p{
+     color:slategrey;
+     font-size:1.1rem;
+     margin-bottom:8px;
+  }
+  .test-btn {
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .test-btn {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .side-item:hover {
+ 
+    border-bottom: 2px solid #535353;
+  }
+
+  .cp_iptxt {
+    position: relative;
+    width: 80%;
+    margin: 40px 3%;
+  }
+  .cp_iptxt input[type="text"] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 4em;
+    text-align: center;
+  }
+  .cp_iptxt input[type="text"]:focus {
+    outline: none;
+  }
+  .ef {
+    padding: 4px 0;
+    border: 0;
+    border-bottom: 1px solid #1b2538;
+    background-color: transparent;
+  }
+  .ef ~ .focus_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: 0.4s;
+    background-color: #da3c41;
+  }
+  .ef:focus ~ .focus_line,
+  .cp_iptxt.ef ~ .focus_line {
+    width: 100%;
+    transition: 0.4s;
+  }
+  .ef ~ label {
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    color: #aaaaaa;
+  }
+  .ef:focus ~ label,
+  .cp_iptxt.ef ~ label {
+    font-size: 12px;
+    top: -16px;
+    transition: 0.3s;
+    color: #da3c41;
+  }
+
+  .btn--orange,
+  a.btn--orange {
+    color: #fff;
+    background-color: #eb6100;
+  }
+  .btn--orange:hover,
+  a.btn--orange:hover {
+    color: #fff;
+    background: #f56500;
+  }
+
+  a.btn--radius {
+    border-radius: 100vh;
+  }
+
+  fieldset {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .login_space {
+    width: 100%;
+    text-align: center;
+    max-width: 500px;
+    z-index: 100;
+    margin: 0 auto;
+  }
+
+  .lab {
+    text-align: left;
+  }
+
+  .login_h2 {
+    margin-right: 30px;
+  }
+</style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".test7 a").addEventListener("click", (e) => {
+      var email = document.querySelector("#email");
+      var password = document.querySelector("#password");
+
+      if (email.value === "") {
+        alert("Emailを入力してください");
+        e.preventDefault();
+        return false;
+      } else if (password.value === "") {
+        alert("Passwordを入力してください");
+        e.preventDefault();
+        return false;
+      } else {
+        e.target.closest("form").submit();
+      }
+    });
+  });
+</script>
+{{end}}
