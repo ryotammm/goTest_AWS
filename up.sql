@@ -33,7 +33,7 @@ create table practicecontents (
 	end_time varchar(255)  NOT NULL,
 	scale INTEGER ,
 	tags varchar(255),
-	describe TEXT,
+	describes TEXT,
 	uuid varchar(64) NOT NULL UNIQUE,
 	created_at timestamp
 
